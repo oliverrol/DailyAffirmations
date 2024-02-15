@@ -20,6 +20,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+<<<<<<< Updated upstream
+=======
+import androidx.compose.foundation.layout.Spacer
+>>>>>>> Stashed changes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -32,6 +36,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+<<<<<<< Updated upstream
+=======
+import androidx.compose.ui.input.pointer.PointerIcon.Companion.Text
+>>>>>>> Stashed changes
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -53,7 +61,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AffirmationsApp()
+                    AffirmationsAppPreview()
                 }
             }
         }
@@ -61,6 +69,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+<<<<<<< Updated upstream
 fun AffirmationsApp() {
     AffirmationList(
         affirmationList = Datasource().loadAffirmations(),
@@ -104,4 +113,47 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
 @Composable
 private fun AffirmationCardPreview() {
     AffirmationCard(Affirmation(R.string.affirmation1, R.drawable.image1))
+=======
+@Preview
+fun AffirmationsAppPreview() {
+    val listaDeAfirmaciones: List<Affirmation> = Datasource().loadAffirmations()
+
+    AffirmationList(lista = listaDeAfirmaciones)
+>>>>>>> Stashed changes
+}
+
+@Composable
+fun CardConjunto(idImagen: Int, idTexto: Int, modifier: Modifier = Modifier) {
+    Card(modifier = modifier) {
+        Column {
+            Image(
+                painter = painterResource(id = idImagen),
+                contentDescription = null,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(194.dp),
+                contentScale = ContentScale.Crop,
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            Text(
+                text = stringResource(id = idTexto),
+                modifier = Modifier.padding(16.dp),
+                style = MaterialTheme.typography.headlineSmall
+            )
+        }
+    }
+}
+
+
+@Composable
+fun AffirmationList(modifier: Modifier = Modifier, lista: List<Affirmation>) {
+    LazyColumn(modifier = modifier) {
+        items(lista) {
+            CardConjunto(
+                idImagen = it.imageResourceId,
+                idTexto = it.stringResourceId,
+                modifier = Modifier.padding(8.dp)
+            )
+        }
+    }
 }

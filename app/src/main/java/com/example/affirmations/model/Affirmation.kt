@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*
  * Copyright (C) 2023 The Android Open Source Project
  *
@@ -13,15 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+=======
+>>>>>>> Stashed changes
 package com.example.affirmations.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
+<<<<<<< Updated upstream
 /**
  * [Affirmation] is the data class to represent the Affirmation text and imageResourceId
  */
 data class Affirmation(
     @StringRes val stringResourceId: Int,
     @DrawableRes val imageResourceId: Int
+=======
+data class Affirmation(
+    @StringRes val stringResourceId : Int,
+    @DrawableRes val imageResourceId : Int
+>>>>>>> Stashed changes
 )
