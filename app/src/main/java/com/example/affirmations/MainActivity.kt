@@ -64,45 +64,10 @@ class MainActivity : ComponentActivity() {
 }
 
 
-@Composable
-fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Modifier) {
-    LazyColumn(modifier = modifier) {
-        items(affirmationList) { affirmation ->
-            AffirmationCard(
-                affirmation = affirmation,
-                modifier = Modifier.padding(8.dp)
-            )
-        }
-    }
-}
-
-@Composable
-fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
-    Card(modifier = modifier) {
-        Column {
-            Image(
-                painter = painterResource(affirmation.imageResourceId),
-                contentDescription = stringResource(affirmation.stringResourceId),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(194.dp),
-                contentScale = ContentScale.Crop
-            )
-            Text(
-                text = LocalContext.current.getString(affirmation.stringResourceId),
-                modifier = Modifier.padding(16.dp),
-                style = MaterialTheme.typography.headlineSmall
-            )
-        }
-    }
-}
-
-
 @Preview
 @Composable
 fun AffirmationsAppPreview() {
     val listaDeAfirmaciones: List<Affirmation> = Datasource().loadAffirmations()
-
     AffirmationList(lista = listaDeAfirmaciones)
 }
 
