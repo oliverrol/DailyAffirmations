@@ -20,10 +20,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
-<<<<<<< Updated upstream
-=======
+
 import androidx.compose.foundation.layout.Spacer
->>>>>>> Stashed changes
+
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -36,10 +35,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-<<<<<<< Updated upstream
-=======
-import androidx.compose.ui.input.pointer.PointerIcon.Companion.Text
->>>>>>> Stashed changes
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -69,7 +64,6 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-<<<<<<< Updated upstream
 fun AffirmationsApp() {
     AffirmationList(
         affirmationList = Datasource().loadAffirmations(),
@@ -109,17 +103,13 @@ fun AffirmationCard(affirmation: Affirmation, modifier: Modifier = Modifier) {
     }
 }
 
+
 @Preview
 @Composable
-private fun AffirmationCardPreview() {
-    AffirmationCard(Affirmation(R.string.affirmation1, R.drawable.image1))
-=======
-@Preview
 fun AffirmationsAppPreview() {
     val listaDeAfirmaciones: List<Affirmation> = Datasource().loadAffirmations()
 
     AffirmationList(lista = listaDeAfirmaciones)
->>>>>>> Stashed changes
 }
 
 @Composable
