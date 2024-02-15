@@ -63,12 +63,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun AffirmationsApp() {
-    AffirmationList(
-        affirmationList = Datasource().loadAffirmations(),
-    )
-}
 
 @Composable
 fun AffirmationList(affirmationList: List<Affirmation>, modifier: Modifier = Modifier) {
